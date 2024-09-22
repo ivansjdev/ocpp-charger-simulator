@@ -31,8 +31,15 @@ const ChargerCard = () => {
   }
 
   return (
-    <section className="flex flex-row gap-4">
-      <Image src="/charging-station.webp" alt="" height={100} width={100} />
+    <section className="flex flex-row gap-4  items-center">
+      <div className="relative w-52 h-52">
+        <Image
+          src="/charging-station.webp"
+          alt="Charging Station"
+          layout="fill"
+          objectFit="contain"
+        />
+      </div>
       <Card>
         <CardHeader>
           <CardTitle>{"Charger Name"}</CardTitle>
@@ -59,11 +66,14 @@ const ChargerCard = () => {
             onChange={(e) => handleUrl(e.target.value)}
             placeholder={"ws://localhost:8080"}
           />
-
         </CardContent>
         <CardFooter className="gap-2">
-          <Button variant="outline" onClick={ handleConnect }>Connect</Button>
-          <Button variant="outline" onClick={ handleDisconnect }>Disconnect</Button>
+          <Button variant="outline" onClick={handleConnect}>
+            Connect
+          </Button>
+          <Button variant="outline" onClick={handleDisconnect}>
+            Disconnect
+          </Button>
         </CardFooter>
       </Card>
     </section>
